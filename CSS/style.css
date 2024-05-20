@@ -81,6 +81,20 @@ footer {
     bottom: 0;
 }
 
+#filter {
+    position: relative;
+    top: 180px;
+    display: flex;
+    justify-content: left;
+
+    margin: 2em;
+}
+
+#highlightFilter {
+    padding: 0.5em;
+    font-size: 1em;
+}
+
 /* Styles for the menu section */
 .menu {
     display: flex;

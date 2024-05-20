@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuSection = document.getElementById('menu');
     const menuItems = JSON.parse(localStorage.getItem('menuItems')) || [];
+    console.log('Menu items loaded:', menuItems); // Debugging statement to confirm menu items were loaded
 
     menuItems.forEach(function(item) {
         const menuItemDiv = document.createElement('div');
-        menuItemDiv.classList.add('menu-item');
+        menuItemDiv.classList.add('menu-item'); 
+        menuItemDiv.dataset.highlight = item.highlight; // Store the highlight in a data attribute
 
         const img = document.createElement('img');
         img.src = item.image;
@@ -30,14 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
             menuItemDiv.appendChild(highlight);
         }
 
+        // Append the menu item to the correct section based on its category
         const sectionId = item.category;
         const section = document.getElementById(sectionId);
         if (section) {
             section.appendChild(menuItemDiv);
         }
     });
-});
 
+    // Filter function
+    const filterDropdown = document.getElementById('highlightFilter');
+    filterDropdown.addEventListener('change', function() {
+        const selectedValue = this.value;
+        document.querySelectorAll('.menu-item').forEach(function(item) {
+            if (selectedValue === 'all' || item.dataset.highlight === selectedValue) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
 
 document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function(event) {
