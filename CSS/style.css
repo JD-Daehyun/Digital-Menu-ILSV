@@ -52,11 +52,14 @@ header h1 {
 
 main {
     padding: 2em;
-    top: 200px;
+    top: 150px;
     position: relative;
     min-height: 800px;
 }
 
+section{
+    padding-bottom: 7em;
+}
 footer {
     background-color: #343a40;
     color: white;
@@ -68,7 +71,7 @@ footer {
 }
 
 /* Styles for the menu section */
-#menu {
+.menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -111,7 +114,6 @@ footer {
     text-align: center;
     margin: 0.5em 0;
 }
-
 .menu-item .highlight {
     font-weight: bold;
     color: #dc3545;
