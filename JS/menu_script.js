@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             menuItemDiv.appendChild(highlight);
         }
 
-        menuSection.appendChild(menuItemDiv);
+        const sectionId = item.category;
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.appendChild(menuItemDiv);
+        }
     });
 });
 

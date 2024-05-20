@@ -17,6 +17,7 @@
         <form id="menuForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
+
             <label for="highlight">Highlight:</label>
             <select id="highlight" name="highlight">
                 <option value="none">None</option>
@@ -24,6 +25,14 @@
                 <option value="bang_for_a_buck">Bang for a Buck</option>
                 <option value="go_wild_special">Go Wild Special</option>
             </select>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="sushi">Sushi</option>
+                <option value="sashimi">Sashimi</option>
+                <option value="ChefSpecial">Chef's Special</option>
+            </select>
+
             <label for="description">Description:</label>
             <input type="text" id="description" name="description" required>
             <label for="price">Price:</label>
@@ -32,6 +41,8 @@
             <input type="file" id="image" name="image" accept="image/*">
             <button type="submit">Add Menu Item</button>
         </form>
+        <button id="clearStorage">Clear Local Storage</button>
+
     </main>
     <footer>
         <p>&copy; 2024 ILoveSushi. All rights reserved.</p>

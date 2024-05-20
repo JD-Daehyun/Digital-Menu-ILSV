@@ -7,6 +7,7 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
     const description = document.getElementById('description').value;
     const price = document.getElementById('price').value;
     const highlight = document.getElementById('highlight').value;
+    const category = document.getElementById('category').value;
     const image = document.getElementById('image').files[0];
 
     const reader = new FileReader();
@@ -16,6 +17,7 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
             description: description,
             price: price,
             highlight: highlight,
+            category: category,
             image: reader.result
         };
     
@@ -33,4 +35,9 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
     } else {
         console.error('No image file selected');
     }
+});
+
+document.getElementById('clearStorage').addEventListener('click', function() {
+    localStorage.clear();
+    console.log('Local storage cleared');
 });
