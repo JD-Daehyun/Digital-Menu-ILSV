@@ -13,6 +13,39 @@ header {
     text-align: center;
 }
 
+header h1 {
+    margin-bottom: 0.5em;
+}
+
+#categories {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.category i {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.category p {
+    margin: 0;
+}
+
+.category:hover {
+    transform: scale(1.1);
+}
+
 main {
     padding: 2em;
 }
