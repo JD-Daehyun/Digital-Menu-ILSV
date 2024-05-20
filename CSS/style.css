@@ -85,7 +85,7 @@ footer {
 .menu {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: left;
     gap: 1em;
 }
 
@@ -97,7 +97,7 @@ footer {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 1em;
-    width: calc(20% - 2em);
+    width: calc(33% - 2em);
     /* Adjust width to fit three items per row */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
