@@ -21,6 +21,17 @@ header h1 {
     margin-bottom: 0.5em;
 }
 
+header a{
+    text-decoration: none;
+    color: white;
+    /* Default color for the links */
+    transition: color 0.3s;
+}
+
+header a:hover{
+    color: #dc3545;
+}
+
 #categories {
     display: flex;
     justify-content: space-around;
