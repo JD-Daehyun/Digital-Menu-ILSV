@@ -35,6 +35,9 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
     } else {
         console.error('No image file selected');
     }
+
+    // Clear the form after submission
+        document.getElementById('menuForm').reset();
 });
 
 document.getElementById('clearStorage').addEventListener('click', function() {
