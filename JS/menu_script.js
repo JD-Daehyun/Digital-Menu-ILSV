@@ -67,7 +67,7 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
 
         const headerOffset = document.querySelector('header').offsetHeight;
         const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerOffset;
+        const offsetPosition = elementPosition - headerOffset -50;
 
         window.scrollTo({
             top: offsetPosition,
