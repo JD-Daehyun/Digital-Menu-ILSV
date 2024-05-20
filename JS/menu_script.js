@@ -4,32 +4,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuItems.forEach(function(item) {
         const menuItemDiv = document.createElement('div');
-        menuItemDiv.classList.add('menu-item'); 
+        menuItemDiv.classList.add('menu-item');
         menuItemDiv.dataset.highlight = item.highlight; // Store the highlight in a data attribute
 
-        const img = document.createElement('img');
-        img.src = item.image;
-        img.alt = item.name;
-        menuItemDiv.appendChild(img);
+        const contentDiv = document.createElement('div');
+        contentDiv.classList.add('content');
 
         const name = document.createElement('h2');
         name.textContent = item.name;
-        menuItemDiv.appendChild(name);
-
-        const description = document.createElement('p');
-        description.textContent = item.description;
-        menuItemDiv.appendChild(description);
+        contentDiv.appendChild(name);
 
         const price = document.createElement('p');
         price.textContent = `$${item.price}`;
-        menuItemDiv.appendChild(price);
+        contentDiv.appendChild(price);
+
+        const description = document.createElement('p');
+        description.textContent = item.description;
+        contentDiv.appendChild(description);
 
         if (item.highlight !== 'none') {
             const highlight = document.createElement('p');
             highlight.textContent = item.highlight.replace('_', ' ');
             highlight.classList.add('highlight');
-            menuItemDiv.appendChild(highlight);
+            contentDiv.appendChild(highlight);
         }
+
+        menuItemDiv.appendChild(contentDiv);
+
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+        menuItemDiv.appendChild(img);
 
         // Append the menu item to the correct section based on its category
         const sectionId = item.category;
@@ -45,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedValue = this.value;
         document.querySelectorAll('.menu-item').forEach(function(item) {
             if (selectedValue === 'all' || item.dataset.highlight === selectedValue) {
-                item.style.display = 'block';
+                item.style.display = 'flex';
             } else {
                 item.style.display = 'none';
             }
