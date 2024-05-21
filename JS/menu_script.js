@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contentDiv.appendChild(price);
 
         const description = document.createElement('p');
+        description.classList.add('description');
         description.textContent = item.description;
         contentDiv.appendChild(description);
 
@@ -166,3 +167,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//for pop up screen 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuSections = document.querySelectorAll('.menu');
+    const popup = document.getElementById('popup');
+    const popupImage = document.getElementById('popup-image');
+    const popupTitle = document.getElementById('popup-title');
+    const popupPrice = document.getElementById('popup-price');
+    const popupDescription = document.getElementById('popup-description');
+    const popupHighlight = document.getElementById('popup-highlight');
+    const closeBtn = document.querySelector('.close');
+
+    menuSections.forEach(menuSection => {
+        menuSection.addEventListener('click', function(e) {
+            const menuItem = e.target.closest('.menu-item');
+            if (menuItem) {
+                const imgSrc = menuItem.querySelector('img').src;
+                const title = menuItem.querySelector('.content h2').textContent;
+                const price = menuItem.querySelector('.content p').textContent;
+                const description = menuItem.querySelector('.content p:nth-of-type(2)').textContent;
+                const highlight = menuItem.querySelector('.content .highlight').textContent;
+
+                popupImage.src = imgSrc;
+                popupTitle.textContent = title;
+                popupPrice.textContent = price;
+                popupDescription.textContent = description;
+                popupHighlight.textContent = highlight;
+
+                popup.style.display = 'flex';
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+
+
+
