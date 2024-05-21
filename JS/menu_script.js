@@ -76,8 +76,54 @@ document.querySelectorAll('.nav-link').forEach(anchor => {
     });
 });
 
+//allow horizontal scrolling with right mouse click for menu
 document.addEventListener('DOMContentLoaded', function() {
     const menuSections = document.querySelectorAll('.menu');
+
+    menuSections.forEach(menuSection => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        menuSection.addEventListener('mousedown', (e) => {
+            if (e.button === 0) { // Left mouse button
+                isDown = true;
+                menuSection.classList.add('active');
+                startX = e.pageX - menuSection.offsetLeft;
+                scrollLeft = menuSection.scrollLeft;
+                e.preventDefault(); // Prevent default behavior
+            }
+        });
+
+        menuSection.addEventListener('mouseleave', () => {
+            isDown = false;
+            menuSection.classList.remove('active');
+        });
+
+        menuSection.addEventListener('mouseup', () => {
+            isDown = false;
+            menuSection.classList.remove('active');
+        });
+
+        menuSection.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - menuSection.offsetLeft;
+            const walk = (x - startX) * 3; // The scroll speed
+            menuSection.scrollLeft = scrollLeft - walk;
+        });
+    });
+
+    // Optionally, prevent default context menu on right click for the sections
+    menuSections.forEach(menuSection => {
+        menuSection.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    });
+});
+//allow horizontal scrolling with right mouse click for categories
+document.addEventListener('DOMContentLoaded', function() {
+    const menuSections = document.querySelectorAll('#categories');
 
     menuSections.forEach(menuSection => {
         let isDown = false;

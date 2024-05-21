@@ -9,7 +9,7 @@ body {
 header {
     background-color: #03045e;
     color: #caf0f8;
-    padding: 1em;
+    padding: 0em;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -44,7 +44,8 @@ header a:hover{
 
 #categories {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 5em;
     align-items: center;
     padding: 2em 0;
     margin: 0 10em;
@@ -126,30 +127,30 @@ header a:hover{
 
 main {
     padding: 2em;
-    top: 340px;
+    top: 300px;
     position: relative;
     min-height: 800px;
     margin: 0 10em;
 }
 
 section{
-    padding-bottom: 7em;
+    padding-bottom: 3em;
 }
 footer {
-    background-color: #03045e;
-    color: #caf0f8;
+    /* background-color: #03045e;
+    color: #caf0f8; */
     text-align: center;
     padding: 1em;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
+    top: 400px;
 }
 
 #filter {
     display: flex;
     position: relative;
     left: 20px;
-    top: 324px;
+    top: 280px;
     padding-top: 1em;
     /* Adding some space from header */
     
@@ -186,7 +187,7 @@ footer {
 .menu {
     display: flex;
     justify-content: left;
-    gap: 1em;
+    gap: 0.5em;
     overflow-x: auto;
     white-space: none;
     scrollbar-width: none;
@@ -210,14 +211,12 @@ h2{
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
-    /* padding: 1em; */
-    width: 33%;
-    min-width: 400px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    min-width: 300px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     transition: transform 0.2s;
     box-sizing: border-box;
-    margin-bottom: 1em;
-    margin-right: 2em;
+    margin: 1em;
 }
 
 .menu-item:hover {
@@ -229,17 +228,16 @@ h2{
     padding: 1em;
     flex-direction: column;
     width: 60%;
-    /* Adjust the width as needed */
-    padding-right: 1em;
+    margin-right: 1em;
 }
 
 .menu-item .content h2 {
-    margin: 0.5em 0;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .menu-item .content p {
-    margin: 0.5em 0;
+    margin: 0.3em 0;
+    font-size: 0.8em;
 }
 
 .menu-item .content .highlight {
@@ -260,6 +258,29 @@ h2{
 }
 
 @media (max-width: 768px) {
+    header h1{
+        font-size: 5em;
+    }
+    #categories{
+        margin: 0;
+        gap: 3em;
+    }
+    .category{
+        text-align: center;
+        font-size: 10px;
+    }
+
+    main{
+        margin: 0 0;
+    }
+    #filter{
+        margin: 0 0;
+    }
+    #highlightFilter{
+        width:150px;
+        height:30px;
+        font-size: 1em;
+    }
     .menu-item {
         flex-direction: column;
         /* Stack items vertically on smaller screens */
@@ -274,6 +295,9 @@ h2{
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
 
+    }
+    h2{
+        font-size: 1.5em;
     }
 
     .menu-item .content {
