@@ -172,12 +172,15 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const menuSections = document.querySelectorAll('.menu');
     const popup = document.getElementById('popup');
+    console.log(popup);
     const popupImage = document.getElementById('popup-image');
     const popupTitle = document.getElementById('popup-title');
     const popupPrice = document.getElementById('popup-price');
     const popupDescription = document.getElementById('popup-description');
     const popupHighlight = document.getElementById('popup-highlight');
     const closeBtn = document.querySelector('.close');
+    const mainContent = document.querySelectorAll('body > :not(#popup)'); // Select all main content areas except popup
+    console.log(mainContent);
 
     menuSections.forEach(menuSection => {
         menuSection.addEventListener('click', function(e) {
@@ -196,17 +199,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 popupHighlight.textContent = highlight;
 
                 popup.style.display = 'flex';
+                mainContent.forEach(content => content.classList.add('blur')); // Add blur to all main content
+                console.log(mainContent);
             }
         });
     });
 
     closeBtn.addEventListener('click', function() {
         popup.style.display = 'none';
+        mainContent.forEach(content => content.classList.remove('blur')); // Remove blur from all main content
     });
 
-    window.addEventListener('click', function(e) {
+    window.addEventListener('click', function (e) {
+        console.log('Popup clicked', e.target);
         if (e.target === popup) {
+            console.log('Outside popup content clicked');
             popup.style.display = 'none';
+            mainContent.forEach(content => content.classList.remove('blur')); // Remove blur from all main content
         }
     });
 });
