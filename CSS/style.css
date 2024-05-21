@@ -133,9 +133,9 @@ main {
     margin: 0 10em;
 }
 
-section{
+/* section{
     padding-bottom: 2em;
-}
+} */
 footer {
     /* background-color: #03045e;
     color: #caf0f8; */
@@ -153,7 +153,6 @@ footer {
     top: 280px;
     padding-top: 1em;
     /* Adding some space from header */
-    
     border-radius: 8px;
     margin: 0 10em;
 }
@@ -185,6 +184,7 @@ footer {
 
 /* Styles for the menu section */
 .menu {
+    background-color: #dc3545;
     display: flex;
     justify-content: left;
     gap: 1em;
