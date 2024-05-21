@@ -134,7 +134,7 @@ main {
 }
 
 section{
-    padding-bottom: 3em;
+    padding-bottom: 2em;
 }
 footer {
     /* background-color: #03045e;
@@ -187,7 +187,7 @@ footer {
 .menu {
     display: flex;
     justify-content: left;
-    gap: 0.5em;
+    gap: 1em;
     overflow-x: auto;
     white-space: none;
     scrollbar-width: none;
@@ -284,6 +284,17 @@ h2{
     .menu-item {
         flex-direction: column;
         /* Stack items vertically on smaller screens */
+        width: 20%;
+        min-width: 200px;
+    }
+
+    .menu-item .content{
+        margin: 0;
+        padding-top: 0.2em;
+    }
+
+    .menu-item .content p{
+        padding: 0 2em;
     }
 
     .menu-item img {
