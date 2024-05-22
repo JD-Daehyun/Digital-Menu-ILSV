@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //Make h1 and h3 title disappear because position: sticky does not seem to work
 document.addEventListener('DOMContentLoaded', function() {
     const headerTitles = document.querySelectorAll('.header-title');
-    const disappearingPoint = 150;  // Set the Y-axis point after which titles should disappear
+    const disappearingPoint = 100;  // Set the Y-axis point after which titles should disappear
 
     window.addEventListener('scroll', function() {
         headerTitles.forEach(title => {
