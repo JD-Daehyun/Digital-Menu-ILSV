@@ -154,6 +154,9 @@ main {
     min-height: 800px;
     margin: 0 10em;
 }
+main h2 {
+    font-size: 2rem;
+}
 
 /* section{
     padding-bottom: 2em;
@@ -218,10 +221,6 @@ footer {
 }
 .menu::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
-}
-
-h2{
-    font-size: 2rem;
 }
 
 .menu-item {
@@ -348,9 +347,9 @@ h2{
 .close {
     position: absolute;
     top: 10px;
-    right: 25px;
+    right: 20px;
     color: gray;
-    font-size: 34px;
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -366,6 +365,10 @@ h2{
     filter: blur(5px);
     pointer-events: none;
 }
+
+
+
+
 
 
 @media (max-width: 768px) {
@@ -385,6 +388,9 @@ h2{
         font-size: 8px;
     }
 
+
+
+
     main{
         margin: 0;
         top: 200px;
@@ -396,36 +402,45 @@ h2{
     #highlightFilter{
         width:150px;
         height:30px;
-        font-size: 0.8em;
+        font-size: 14px;
+    }
+
+
+
+    .menu{
+        gap: 0;
+    }
+    main h2 {
+        font-size: 16px;
     }
     .menu-item {
         flex-direction: column;
         /* Stack items vertically on smaller screens */
-        width: 20%;
         min-width: 200px;
     }
 
     .menu-item .content{
         margin: 0;
         padding-top: 0.2em;
+        width: 40%;
     }
-
+    .menu-item .content h2 {
+        font-size: 12px;
+    }
     .menu-item .content p{
         padding: 0 2em;
+        font-size: 10px;
     }
 
     .menu-item img {
         width: 100%;
         /* Image takes full width on smaller screens */
-        max-height: 100px;
+        max-height: 80px;
         /* Remove max-height to allow full image display */
         border-top-right-radius: 0px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
 
-    }
-    h2{
-        font-size: 1.5em;
     }
 
     .menu-item .content {
@@ -435,20 +450,31 @@ h2{
         margin-right: 3em;
         text-align: center;
     }
-    .menu-item .content h2 {
-        font-size: 1em;
-    }
-
-    .menu-item .content p {
-        margin: 0.5em 0;
-    }
     .popup-content {
-        width: 70%;
-        height: auto;
+        width: 80%;
+        max-height: 80%;
     }
     .popup-content img {
         width: 100%;
         margin: 0;
         padding-bottom: 10px;
+    }
+    
+    .popup-content #popup-title {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+    .popup-content p{
+        font-size: 10px;
+    }
+    .popup-content #popup-description {
+        text-align: left;
+        color: black;
+        padding: 0 20px;
+    }
+
+    footer{
+        font-size: 12px;
     }
 }
