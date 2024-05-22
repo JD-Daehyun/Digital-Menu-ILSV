@@ -7,6 +7,7 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
     const description = document.getElementById('description').value;
     const price = document.getElementById('price').value;
     const highlight = document.getElementById('highlight').value;
+    console.log(highlight);
     const category = document.getElementById('category').value;
     const image = document.getElementById('image').files[0];
 

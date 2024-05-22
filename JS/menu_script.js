@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     menuItems.forEach(function(item) {
         const menuItemDiv = document.createElement('div');
         menuItemDiv.classList.add('menu-item');
-        menuItemDiv.dataset.highlight = item.highlight; // Store the highlight in a data attribute
 
         const contentDiv = document.createElement('div');
         contentDiv.classList.add('content');
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (item.highlight !== 'none') {
             const highlight = document.createElement('p');
-            highlight.textContent = item.highlight.replace('_', ' ');
+            highlight.textContent = item.highlight;
             highlight.classList.add('highlight');
             contentDiv.appendChild(highlight);
         }
@@ -49,12 +48,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterDropdown = document.getElementById('highlightFilter');
     filterDropdown.addEventListener('change', function() {
         const selectedValue = this.value;
-        document.querySelectorAll('.menu-item').forEach(function(item) {
-            if (selectedValue === 'all' || item.dataset.highlight === selectedValue) {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
+        console.log(this.value);
+    document.querySelectorAll('.menu-item').forEach(function(item) {
+        // Find the element that contains the highlight text
+        const menu_content = item.querySelector('content');
+        const highlight = item.querySelector('.highlight').textContent;
+
+        // Check if the highlight matches the selected value from the dropdown
+        if (selectedValue === 'all' || highlight === selectedValue) {
+            item.style.display = 'flex'; // Show the menu item if it matches
+        } else {
+            item.style.display = 'none'; // Hide the menu item if it doesn't match
+        }
+
         });
     });
 });
@@ -180,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const popupHighlight = document.getElementById('popup-highlight');
     const closeBtn = document.querySelector('.close');
     const mainContent = document.querySelectorAll('body > :not(#popup)'); // Select all main content areas except popup
-    console.log(mainContent);
 
     menuSections.forEach(menuSection => {
         menuSection.addEventListener('click', function(e) {
@@ -200,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 popup.style.display = 'flex';
                 mainContent.forEach(content => content.classList.add('blur')); // Add blur to all main content
-                console.log(mainContent);
             }
         });
     });
