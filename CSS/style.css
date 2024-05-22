@@ -65,6 +65,7 @@ header h3 {
     /* Hide scrollbar for Firefox */
     -ms-overflow-style: none;
     /* Hide scrollbar for Internet Explorer and Edge */
+    
 }
 
 #categories::-webkit-scrollbar {
@@ -91,7 +92,6 @@ header a:hover {
     transition: transform 0.6s;
     position: relative;
     z-index: 1;
-    /* Ensure the category content is above the pseudo-element */
 }
 
 .category::before {
@@ -174,7 +174,7 @@ footer {
 #filter {
     display: flex;
     position: relative;
-    left: 20px;
+    left: 1em;
     top: 300px;
     padding-top: 1em;
     /* Adding some space from header */
@@ -227,7 +227,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -236,7 +236,9 @@ footer {
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     transition: transform 0.8s;
     box-sizing: border-box;
-    margin: 1em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .menu-item:hover {
@@ -266,6 +268,7 @@ footer {
     -webkit-line-clamp: 3;
     /* Number of lines to show */
     -webkit-box-orient: vertical;
+    height: 50px;
     max-height: 4.5em;
     /* Adjust based on line height */
     line-height: 1.5em;
@@ -372,6 +375,7 @@ footer {
 
 
 @media (max-width: 768px) {
+    
     header h1{
         font-size: 3em;
     }
@@ -382,6 +386,7 @@ footer {
         margin: 0;
         gap: 2em;
         padding: 2em;
+        justify-content: space-evenly;
     }
     .category{
         text-align: center;
@@ -422,7 +427,6 @@ footer {
     .menu-item .content{
         margin: 0;
         padding-top: 0.2em;
-        width: 40%;
     }
     .menu-item .content h2 {
         font-size: 12px;
@@ -435,7 +439,7 @@ footer {
     .menu-item img {
         width: 100%;
         /* Image takes full width on smaller screens */
-        max-height: 80px;
+        max-height: 6em;
         /* Remove max-height to allow full image display */
         border-top-right-radius: 0px;
         border-bottom-left-radius: 5px;
@@ -452,7 +456,6 @@ footer {
     }
     .popup-content {
         width: 80%;
-        max-height: 80%;
     }
     .popup-content img {
         width: 100%;

@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+//category click and scroll
 document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function(event) {
         event.preventDefault();
@@ -128,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 //allow horizontal scrolling with right mouse click for categories
 document.addEventListener('DOMContentLoaded', function() {
     const menuSections = document.querySelectorAll('#categories');
