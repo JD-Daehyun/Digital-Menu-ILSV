@@ -220,5 +220,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//Make h1 and h3 title disappear because position: sticky does not seem to work
+document.addEventListener('DOMContentLoaded', function() {
+    const headerTitles = document.querySelectorAll('.header-title');
+    const disappearingPoint = 150;  // Set the Y-axis point after which titles should disappear
+
+    window.addEventListener('scroll', function() {
+        headerTitles.forEach(title => {
+            if (window.scrollY > disappearingPoint) {
+                // Start the fade out
+                title.style.opacity = '0';
+                // Wait for the transition to finish before setting display: none;
+                setTimeout(() => {
+                    title.style.display = 'none';
+                }, 300); // This timeout duration should match the CSS transition
+            } else {
+                setTimeout(() => {
+                    title.style.display = '';
+                }, 300);
+                title.style.opacity = '1';
+            }
+        });
+    });
+});
+
+
 
 
